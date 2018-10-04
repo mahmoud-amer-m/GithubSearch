@@ -20,7 +20,7 @@ class ItemDetailsViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.title = item?.owner?.login
+        navigationController?.title = item?.owner?.login ?? ""
         avatarImageView.sd_setImage(with: URL(string: item?.owner?.avatar_url ?? ""), placeholderImage: UIImage(named: ""), options: .refreshCached, completed: nil)
         repoNameLabel.text = item?.full_name ?? ""
         subscribersCountLabel.text = "Number of subscribers: \(item?.watchers_count ?? 0)"
